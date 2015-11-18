@@ -1,3 +1,24 @@
+/***********************************************************
+*
+* little endian & big endian
+*
+* 1. little endian
+*       低地址存放最低有效字节(LSB)
+*
+* 2. big endian
+*       高地址存放最高有效字节(MSB)
+*
+* 3. 0x1234abcd 写入到以0x0000开始的内存中
+*       0xFF = 255 (10 进制)
+*       一个字节8位，最高可存储数字是11111111 =  256
+*       所以取0x1234abcd 每两个可使用1个字节， 即一共使用4个字节
+*       		big-endian		little-endian
+*		0x0000  0x12            0xcd
+*		0x0001  0x34            0xab
+*		0x0002  0xab            0x34
+*		0x0003  0xcd            0x12
+ */
+
 package binary
 
 import (
